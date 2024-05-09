@@ -15,6 +15,7 @@
 		3CC6BD4E2BED291900E53D33 /* RickAndMortyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD4D2BED291900E53D33 /* RickAndMortyAppUITests.swift */; };
 		3CC6BD502BED291900E53D33 /* RickAndMortyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD4F2BED291900E53D33 /* RickAndMortyAppUITestsLaunchTests.swift */; };
 		3CC6BD582BED2A3700E53D33 /* rick-morty-swift-api in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC6BD572BED2A3700E53D33 /* rick-morty-swift-api */; };
+		3CC6BD5B2BED2B2A00E53D33 /* CharacterDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD5A2BED2B2A00E53D33 /* CharacterDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		3CC6BD4B2BED291900E53D33 /* RickAndMortyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC6BD4D2BED291900E53D33 /* RickAndMortyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAppUITests.swift; sourceTree = "<group>"; };
 		3CC6BD4F2BED291900E53D33 /* RickAndMortyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3CC6BD5A2BED2B2A00E53D33 /* CharacterDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		3CC6BD2F2BED175300E53D33 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3CC6BD592BED2B1600E53D33 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -175,6 +178,14 @@
 				3CC6BD4F2BED291900E53D33 /* RickAndMortyAppUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyAppUITests;
+			sourceTree = "<group>";
+		};
+		3CC6BD592BED2B1600E53D33 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3CC6BD5A2BED2B2A00E53D33 /* CharacterDataManager.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC6BD242BECE97500E53D33 /* HomeView.swift in Sources */,
+				3CC6BD5B2BED2B2A00E53D33 /* CharacterDataManager.swift in Sources */,
 				3CC6BD222BECE97500E53D33 /* RickAndMortyAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
