@@ -16,7 +16,7 @@ struct HomeView: View {
                     .scaledToFit()
                 
                 NavigationLink {
-                    EmptyView()
+                    CharactersListView()
                 } label: {
                     Text("Explore Characters")
                         .foregroundStyle(.white)
