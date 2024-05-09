@@ -12,20 +12,32 @@ struct CharactersListView: View {
     @StateObject private var viewModel = CharactersListViewModel()
     @State private var showModal = false
     @State private var selected: RMCharacterModel?
+    @State private var searchText = ""
+    
+    var filteredCharacters: [RMCharacterModel] {
+        if searchText.isEmpty {
+            return viewModel.charactersList
+        } else {
+            return viewModel.charactersList.filter {$0.name?.contains(searchText) ?? false }
+        }
+    }
     
     var body: some View {
-        ScrollView {
-            if !viewModel.isLoadingList {
-                LazyVStack(alignment: .leading, spacing: 20) {
-                    ForEach(viewModel.charactersList) { character in
-                        characterRowView(character: character)
+        VStack {
+            ScrollView {
+                if !viewModel.isLoadingList {
+                    LazyVStack(alignment: .leading, spacing: 20) {
+                        ForEach(filteredCharacters) { character in
+                            characterRowView(character: character)
+                        }
                     }
+                } else if viewModel.errorOnLoadingListString.isEmpty {
+                    ProgressView()
+                } else {
+                    Text(viewModel.errorOnLoadingListString)
                 }
-            } else if viewModel.errorOnLoadingListString.isEmpty {
-                ProgressView()
-            } else {
-                Text(viewModel.errorOnLoadingListString)
             }
+            .searchable(text: $searchText, prompt: Text("Search a name..."))
         }
         .padding()
         .onAppear {
