@@ -14,6 +14,7 @@
 		3CC6BD412BED28F400E53D33 /* RickAndMortyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD402BED28F400E53D33 /* RickAndMortyAppTests.swift */; };
 		3CC6BD4E2BED291900E53D33 /* RickAndMortyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD4D2BED291900E53D33 /* RickAndMortyAppUITests.swift */; };
 		3CC6BD502BED291900E53D33 /* RickAndMortyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD4F2BED291900E53D33 /* RickAndMortyAppUITestsLaunchTests.swift */; };
+		3CC6BD582BED2A3700E53D33 /* rick-morty-swift-api in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC6BD572BED2A3700E53D33 /* rick-morty-swift-api */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC6BD582BED2A3700E53D33 /* rick-morty-swift-api in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +194,7 @@
 			);
 			name = RickAndMortyApp;
 			packageProductDependencies = (
+				3CC6BD572BED2A3700E53D33 /* rick-morty-swift-api */,
 			);
 			productName = RickAndMortyApp;
 			productReference = 3CC6BD1E2BECE97500E53D33 /* RickAndMortyApp.app */;
@@ -266,6 +269,7 @@
 			);
 			mainGroup = 3CC6BD152BECE97500E53D33;
 			packageReferences = (
+				3CC6BD562BED2A3700E53D33 /* XCRemoteSwiftPackageReference "Rick-and-Morty-Swift-API" */,
 			);
 			productRefGroup = 3CC6BD1F2BECE97500E53D33 /* Products */;
 			projectDirPath = "";
@@ -634,6 +638,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3CC6BD562BED2A3700E53D33 /* XCRemoteSwiftPackageReference "Rick-and-Morty-Swift-API" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benjaminbruch/Rick-and-Morty-Swift-API#installation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3CC6BD572BED2A3700E53D33 /* rick-morty-swift-api */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CC6BD562BED2A3700E53D33 /* XCRemoteSwiftPackageReference "Rick-and-Morty-Swift-API" */;
+			productName = "rick-morty-swift-api";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3CC6BD162BECE97500E53D33 /* Project object */;
 }

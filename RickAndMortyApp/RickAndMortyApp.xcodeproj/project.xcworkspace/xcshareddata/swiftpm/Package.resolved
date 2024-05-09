@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "rick-and-morty-swift-api#installation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/benjaminbruch/Rick-and-Morty-Swift-API#installation",
+      "state" : {
+        "revision" : "4ca6dda9e32481aca9c4927ca7b5638d71d7b699",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
