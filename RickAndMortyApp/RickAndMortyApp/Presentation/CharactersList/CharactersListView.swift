@@ -11,9 +11,10 @@ import SDWebImageSwiftUI
 struct CharactersListView: View {
     @StateObject private var viewModel = CharactersListViewModel()
     @State private var showModal = false
-    @State private var selected: RMCharacterModel?
+    @State private var selectedCharacter: RMCharacterModel?
     @State private var searchText = ""
-    
+    @State private var isModalPresented = false
+
     var filteredCharacters: [RMCharacterModel] {
         if searchText.isEmpty {
             return viewModel.charactersList
@@ -29,6 +30,9 @@ struct CharactersListView: View {
                     LazyVStack(alignment: .leading, spacing: 20) {
                         ForEach(filteredCharacters) { character in
                             characterRowView(character: character)
+                                .onTapGesture {
+                                    selectedCharacter = character
+                                }
                         }
                     }
                 } else if viewModel.errorOnLoadingListString.isEmpty {
@@ -43,6 +47,15 @@ struct CharactersListView: View {
         .onAppear {
             viewModel.loadCharactersList()
         }
+        .onChange(of: selectedCharacter, { _, _ in
+            isModalPresented = true
+        })
+        .sheet(isPresented: $isModalPresented, content: {
+            if let selectedCharacter = selectedCharacter {
+                CharacterDetailsView(character: selectedCharacter, isModalPresented: $isModalPresented)
+            }
+        })
+        
         .onDisappear {
             viewModel.cancelTasks()
         }

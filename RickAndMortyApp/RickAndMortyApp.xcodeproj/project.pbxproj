@@ -20,6 +20,7 @@
 		3CC6BD732BED49CA00E53D33 /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD722BED49CA00E53D33 /* CharactersListViewModel.swift */; };
 		3CC6BD752BED510500E53D33 /* RMCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD742BED510500E53D33 /* RMCharacterModel.swift */; };
 		3CC6BD792BED767100E53D33 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC6BD782BED767100E53D33 /* SDWebImageSwiftUI */; };
+		3CC6BD7E2BF238F200E53D33 /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC6BD7D2BF238F200E53D33 /* CharacterDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		3CC6BD702BED49C000E53D33 /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
 		3CC6BD722BED49CA00E53D33 /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		3CC6BD742BED510500E53D33 /* RMCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterModel.swift; sourceTree = "<group>"; };
+		3CC6BD7D2BF238F200E53D33 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			children = (
 				3CC6BD342BED1D5B00E53D33 /* Home */,
 				3CC6BD6F2BED49AD00E53D33 /* CharactersList */,
+				3CC6BD7C2BF2385200E53D33 /* CharacterDetail */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -213,6 +216,14 @@
 			children = (
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		3CC6BD7C2BF2385200E53D33 /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3CC6BD7D2BF238F200E53D33 /* CharacterDetailsView.swift */,
+			);
+			path = CharacterDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +367,7 @@
 				3CC6BD242BECE97500E53D33 /* HomeView.swift in Sources */,
 				3CC6BD5B2BED2B2A00E53D33 /* CharacterDataManager.swift in Sources */,
 				3CC6BD752BED510500E53D33 /* RMCharacterModel.swift in Sources */,
+				3CC6BD7E2BF238F200E53D33 /* CharacterDetailsView.swift in Sources */,
 				3CC6BD712BED49C000E53D33 /* CharactersListView.swift in Sources */,
 				3CC6BD222BECE97500E53D33 /* RickAndMortyAppApp.swift in Sources */,
 				3CC6BD732BED49CA00E53D33 /* CharactersListViewModel.swift in Sources */,
