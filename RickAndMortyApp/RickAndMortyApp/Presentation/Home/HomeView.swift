@@ -18,7 +18,7 @@ struct HomeView: View {
                 NavigationLink {
                     CharactersListView()
                 } label: {
-                    Text("Explore Characters")
+                    Text("home_begin_button_title".localized)
                         .foregroundStyle(.white)
                         .font(.title2)
                         .bold()

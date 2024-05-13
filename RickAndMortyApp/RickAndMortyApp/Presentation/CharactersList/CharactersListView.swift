@@ -68,9 +68,9 @@ struct CharactersListView: View {
                 VStack(alignment: .leading) {
                     Text(character.name ?? "")
                         .font(.headline)
-                    Text("Speccy: \(character.species ?? "")")
+                    Text("\("character_list_view_speccy_title".localized): \(character.species ?? "")")
                         .font(.subheadline)
-                    Text("Status: \(character.status ?? "")")
+                    Text("\("character_list_view_status_title".localized): \(character.status ?? "")")
                         .font(.subheadline)
                 }
             }

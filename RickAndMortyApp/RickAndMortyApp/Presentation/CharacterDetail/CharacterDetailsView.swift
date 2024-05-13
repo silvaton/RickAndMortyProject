@@ -12,6 +12,14 @@ import SDWebImageSwiftUI
 struct CharacterDetailsView: View {
     let character: RMCharacterModel
     @Binding var isModalPresented: Bool
+    
+    // Constants for localized string keys
+    private let statusTitleKey = "character_details_view_status_title"
+    private let speccyTitleKey = "character_details_view_speccy_title"
+    private let genderTitleKey = "character_details_view_gender_title"
+    private let originTitleKey = "character_details_view_origin_title"
+    private let numberOfEpisodesTitleKey = "character_details_view_number_of_episodes_title"
+    private let buttonTittleKey = "character_details_view_dismiss_button_title"
 
     
     var body: some View {
@@ -33,17 +41,18 @@ struct CharacterDetailsView: View {
                     .padding()
             }
             VStack(alignment: .leading, spacing: 10) {
-                            
-                            Text("Status: \(character.status ?? "Unknown")")
-                            Text("Species: \(character.species ?? "Unknown")")
-                            Text("Gender: \(character.gender ?? "Unknown")")
-                            Text("Origin: \(character.origin?.name ?? "Unknown")")
+                // Status
+                Text("\(statusTitleKey.localized): \(character.status ?? "unknown")")
+                Text("\(speccyTitleKey.localized): \(character.species ?? "unknown")")
+                Text("\(genderTitleKey.localized): \(character.gender ?? "unknown")")
+                Text("\(originTitleKey.localized): \(character.origin?.name ?? "unknown")")
+                Text("\(numberOfEpisodesTitleKey.localized): \(character.episode?.count ?? 0)")
                         }
                         .padding()
                         
                         Spacer()
             
-            Button("Dismiss") {
+            Button(buttonTittleKey.localized) {
                 isModalPresented = false
             }
             .padding()

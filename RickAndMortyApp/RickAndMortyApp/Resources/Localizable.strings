@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  RickAndMortyApp
+
+  Created by Ton Silva on 13/5/24.
+  
+*/
+
+// Home
+
+"home_begin_button_title" = "Explore Characters";
+
+// CharactersListView
+"character_list_view_speccy_title" = "Speccy";
+"character_list_view_status_title" = "Status";
+
+// CharacterDetailsView
+"character_details_view_status_title" = "Status";
+"character_details_view_speccy_title" = "Speccy";
+"character_details_view_gender_title" = "Gender";
+"character_details_view_origin_title" = "Origin";
+"character_details_view_number_of_episodes_title" = "Number of Episodes";
+"character_details_view_dismiss_button_title" = "Dimiss";
+"" = "";
