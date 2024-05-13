@@ -34,6 +34,7 @@ final class CharactersListViewModel: ObservableObject {
                 isLoadingList = false
             }
         }
+        isLoadingList = false
         tasks.append(task)
     }
     

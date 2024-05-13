@@ -25,9 +25,9 @@ struct CharactersListView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
-                if !viewModel.isLoadingList {
-                    LazyVStack(alignment: .leading, spacing: 20) {
+            if !viewModel.isLoadingList && !viewModel.charactersList.isEmpty {
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: Constants.stackSpacing) {
                         ForEach(filteredCharacters) { character in
                             characterRowView(character: character)
                                 .onTapGesture {
@@ -35,13 +35,28 @@ struct CharactersListView: View {
                                 }
                         }
                     }
-                } else if viewModel.errorOnLoadingListString.isEmpty {
-                    ProgressView()
-                } else {
-                    Text(viewModel.errorOnLoadingListString)
+                }
+                .searchable(text: $searchText,
+                            prompt: Text("character_list_view_search_box_placeholder".localized))
+                
+            } else if viewModel.errorOnLoadingListString.isEmpty && viewModel.isLoadingList {
+                ProgressView()
+            } else {
+                VStack {
+                    Text("character_list_view_error_title".localized)
+                    Button(action: {
+                        viewModel.loadCharactersList()
+                    }, label: {
+                        Text("character_list_view_error_button_title".localized)
+                            .font(.title)
+                            .foregroundStyle(AppStyle.buttonTextColor)
+                            .padding(Constants.buttonPadding)
+                            .padding(.horizontal)
+                            .background(AppStyle.buttonBackgroundColor)
+                            .clipShape(RoundedRectangle(cornerRadius: Constants.buttonCornerRadius))
+                    })
                 }
             }
-            .searchable(text: $searchText, prompt: Text("Search a name..."))
         }
         .padding()
         .onAppear {
@@ -87,13 +102,15 @@ struct CharactersListView: View {
                     image
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 70, height: 70)
+                        .frame(width: Constants.imageWidth, 
+                               height: Constants.imageHeigh)
                         .clipShape(Circle())
                 } placeholder: {
                     ZStack {
                         Image(systemName: "person.fill")
                             .resizable()
-                            .frame(width: 50, height: 50)
+                            .frame(width: Constants.imageWidth,
+                                   height: Constants.imageHeigh)
                         
                         ProgressView()
                     }
@@ -103,9 +120,19 @@ struct CharactersListView: View {
             return AnyView(
                 Image(systemName: "person.fill")
                     .resizable()
-                    .frame(width: 50, height: 50)
+                    .frame(width: Constants.imageWidth,
+                           height: Constants.imageHeigh)
             )
         }
+    }
+    
+    // MARK: - Constants
+    private enum Constants {
+        static let imageWidth = 70.0
+        static let imageHeigh = 70.0
+        static let buttonPadding = 10.0
+        static let buttonCornerRadius = 10.0
+        static let stackSpacing = 20.0
     }
 }
 

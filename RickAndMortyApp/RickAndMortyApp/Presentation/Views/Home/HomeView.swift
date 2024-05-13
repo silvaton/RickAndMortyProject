@@ -19,18 +19,25 @@ struct HomeView: View {
                     CharactersListView()
                 } label: {
                     Text("home_begin_button_title".localized)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(AppStyle.buttonTextColor)
                         .font(.title2)
                         .bold()
                         .padding()
-                        .background(.gray)
+                        .background(AppStyle.buttonBackgroundColor)
                         .clipShape(.buttonBorder)
+                        .shadow(radius: Constants.shadowRadius)
                 }
             }
             .padding()
         }
     }
+    
+    // MARK: - Constants
+    private enum Constants {
+        static let shadowRadius = 5.0
+    }
 }
+
 
 #Preview {
     HomeView()
