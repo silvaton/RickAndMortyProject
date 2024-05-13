@@ -36,4 +36,39 @@ final class CharactersListViewModel: ObservableObject {
         }
         tasks.append(task)
     }
+    
+    func buildCharacterResume(character: RMCharacterModel) -> String {
+        let genderPronoun = determineGenderPronoun(character: character)
+        let planetDescription = formatPlanetDescription(character: character)
+        let episodeDescription = formatEpisodeDescription(character: character)
+        
+        return "\(character.name ?? "") \(planetDescription). Since the beginning of the program \(genderPronoun) has participated in \(episodeDescription)."
+    }
+
+    func determineGenderPronoun(character: RMCharacterModel) -> String {
+        switch character.gender?.lowercased() {
+            case "male":
+                return "he"
+            case "female":
+                return "she"
+            default:
+                return "they"
+        }
+    }
+
+    func formatPlanetDescription(character: RMCharacterModel) -> String {
+        guard let originName = character.origin?.name?.lowercased(), !originName.isEmpty else {
+            return "has your origin still unknown"
+        }
+        if originName == "unknown" {
+            return "has your origin still unknown"
+        }
+        return "is from the planet called \(originName.capitalized)"
+    }
+
+    func formatEpisodeDescription(character: RMCharacterModel) -> String {
+        let episodeCount = character.episode?.count ?? 0
+        let episodeDescription = episodeCount < 2 ? "\(episodeCount) episode" : "\(episodeCount) episodes"
+        return episodeDescription
+    }
 }

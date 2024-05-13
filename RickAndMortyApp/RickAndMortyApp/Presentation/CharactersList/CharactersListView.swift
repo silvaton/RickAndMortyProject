@@ -49,16 +49,21 @@ struct CharactersListView: View {
     }
     
     func characterRowView(character: RMCharacterModel) -> some View {
-        HStack {
-            getProfileImage(characterStringUrl: character.image)
-            VStack(alignment: .leading) {
-                Text(character.name ?? "")
-                    .font(.headline)
-                Text("Planet: \(character.origin?.name ?? "")")
-                    .font(.subheadline)
-                Text("Speccy: \(character.species ?? "")")
-                    .font(.subheadline)
+        VStack(alignment: .leading) {
+            HStack {
+                getProfileImage(characterStringUrl: character.image)
+                VStack(alignment: .leading) {
+                    Text(character.name ?? "")
+                        .font(.headline)
+                    Text("Speccy: \(character.species ?? "")")
+                        .font(.subheadline)
+                    Text("Status: \(character.status ?? "")")
+                        .font(.subheadline)
+                }
             }
+            .padding(.vertical)
+            Text(viewModel.buildCharacterResume(character: character))
+            Divider()
         }
     }
     
