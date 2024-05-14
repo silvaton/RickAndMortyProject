@@ -15,6 +15,7 @@
 "home_begin_button_title" = "Explore Characters";
 
 // CharactersListView
+"character_list_view_navigation_title" = "Characters List";
 "character_list_view_speccy_title" = "Speccy";
 "character_list_view_status_title" = "Status";
 "character_list_view_search_box_placeholder" = "Search a name...";

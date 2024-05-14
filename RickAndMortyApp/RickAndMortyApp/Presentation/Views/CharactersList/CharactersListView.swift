@@ -41,7 +41,7 @@ struct CharactersListView: View {
                 
             } else if viewModel.errorOnLoadingListString.isEmpty && viewModel.isLoadingList {
                 ProgressView()
-            } else {
+            } else if !viewModel.errorOnLoadingListString.isEmpty {
                 VStack {
                     Text("character_list_view_error_title".localized)
                     Button(action: {
@@ -56,9 +56,12 @@ struct CharactersListView: View {
                             .clipShape(RoundedRectangle(cornerRadius: Constants.buttonCornerRadius))
                     })
                 }
+            } else {
+                ProgressView()
             }
         }
         .padding()
+        .navigationTitle("character_list_view_navigation_title".localized)
         .onAppear {
             viewModel.loadCharactersList()
         }
