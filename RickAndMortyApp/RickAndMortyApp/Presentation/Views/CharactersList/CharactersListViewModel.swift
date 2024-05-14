@@ -15,7 +15,7 @@ final class CharactersListViewModel: ObservableObject {
     @Published var isLoadingList = false
     
     var dataManager = CharacterDataManager()
-    private var tasks: [Task<Void, Never>] = []
+    var tasks: [Task<Void, Never>] = []
     
     func cancelTasks() {
         tasks.forEach({$0.cancel()})
@@ -30,7 +30,7 @@ final class CharactersListViewModel: ObservableObject {
                 charactersList.append(contentsOf: list)
                 isLoadingList = false
             } catch {
-                errorOnLoadingListString = errorOnLoadingListString.description
+                errorOnLoadingListString = error.localizedDescription
                 isLoadingList = false
             }
         }
